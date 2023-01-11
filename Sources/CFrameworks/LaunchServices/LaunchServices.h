@@ -46,6 +46,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (BOOL)uninstallApplication:(NSString *)arg0 withOptions:(_Nullable id)arg1 error:(NSError **)arg2 usingBlock:(_Nullable id)arg3;
 @end
 
+@interface LSApplicationRecord : NSObject
+@property (nonatomic,readonly) LSApplicationProxy * compatibilityObject;
+
++(NSEnumerator *)enumeratorWithOptions:(unsigned long long)arg1 ;
+@end
+
+
 #if UIKIT_AVAILABLE
 @interface UIImage (Private)
 + (instancetype)_applicationIconImageForBundleIdentifier:(NSString*)bundleIdentifier format:(int)format scale:(CGFloat)scale;
