@@ -44,6 +44,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSArray <LSApplicationProxy *> *)allApplications;
 - (BOOL)openApplicationWithBundleID:(NSString *)arg0 ;
 - (BOOL)uninstallApplication:(NSString *)arg0 withOptions:(_Nullable id)arg1 error:(NSError **)arg2 usingBlock:(_Nullable id)arg3;
+
+- (void)enumerateApplicationsOfType:(unsigned int)arg1 block:(id /* block */)arg2;
 @end
 
 @interface LSApplicationRecord : NSObject
