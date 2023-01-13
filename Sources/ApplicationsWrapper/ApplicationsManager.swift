@@ -36,6 +36,14 @@ public struct ApplicationsManager {
         }
     }
     
+    public func installApp(_ ipaURL: URL, bundle: String) throws {
+        let options = NSMutableDictionary()
+        options.setValue(bundle, forKey: "CFBundleIdentifier")
+        
+        let response = LSApplicationWorkspace.default().installApplication(ipaURL, withOptions: (options as! [AnyHashable: Any]))
+        print("got \(response)")
+    }
+    
     public func deleteApp(_ app: LSApplicationProxy) throws {
         let errorPointer: NSErrorPointer = nil
         let didSucceed = LSApplicationWorkspace.default().uninstallApplication(app.applicationIdentifier(), withOptions: nil, error: errorPointer, usingBlock: nil)
